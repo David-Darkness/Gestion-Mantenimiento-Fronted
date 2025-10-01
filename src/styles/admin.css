@@ -1,0 +1,72 @@
+/* Admin dashboard layout styles */
+
+.admin {
+  min-height: 100vh;
+  background: #0f1115;
+  color: #e7e7e7;
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  grid-template-rows: 64px 1fr;
+  grid-template-areas:
+    "sidebar topbar"
+    "sidebar content";
+}
+
+.admin-topbar {
+  grid-area: topbar;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  background: linear-gradient(180deg, #141720, #10131a);
+  border-bottom: 1px solid #1e2230;
+}
+
+.admin-topbar .brand { font-weight: 600; opacity: 0.95; }
+.admin-topbar .role { opacity: 0.75; }
+
+.admin-sidebar {
+  grid-area: sidebar;
+  background: linear-gradient(180deg, #0b0d12, #0c0f15);
+  border-right: 1px solid #1e2230;
+  padding: 16px 10px;
+}
+
+.side-title { font-size: 20px; font-weight: 700; padding: 8px 10px 14px; opacity: .95; }
+
+.menu { display: flex; flex-direction: column; gap: 6px; margin-top: 8px; }
+.menu a {
+  display: flex; align-items: center; gap: 10px;
+  color: #d8d8d8; text-decoration: none; padding: 10px 12px; border-radius: 10px;
+}
+.menu a:hover { background: #1a1f2d; }
+.menu a.active { background: #1a2436; color: #cfe1ff; }
+.menu .icon { width: 20px; text-align: center; opacity: .85; }
+
+.admin-content {
+  grid-area: content;
+  padding: 22px 26px;
+}
+
+.welcome { font-size: 34px; font-weight: 700; margin-bottom: 8px; }
+.section-title { font-size: 26px; font-weight: 600; margin: 8px 0 16px; opacity: .95; }
+
+.card {
+  background: radial-gradient(1200px 400px at -10% -100%, #192034 0, transparent 40%), #0f1219;
+  border: 1px solid #232a3b;
+  border-radius: 12px;
+  padding: 18px;
+}
+
+.table { width: 100%; border-collapse: collapse; }
+.table th, .table td { padding: 12px 10px; border-bottom: 1px solid #222a3a; text-align: left; }
+.table th { color: #aebad1; font-weight: 600; font-size: 13px; }
+.table tr:hover td { background: #141a27; }
+
+.muted { opacity: .8; }
+
+@media (max-width: 900px) {
+  .admin { grid-template-columns: 1fr; grid-template-rows: 56px auto auto; grid-template-areas: "topbar" "sidebar" "content"; }
+}
+
+
