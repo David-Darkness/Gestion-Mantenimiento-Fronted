@@ -12,7 +12,7 @@ export default function Home() {
         </header>
 
         <div className="roles">
-          <Link to="/reportar" className="role-link" aria-label="Emplead@">
+          <Link to="/login/empleado" className="role-link" aria-label="Emplead@">
             <div className="role-card">
               <div className="role-icon">👤</div>
               <div className="role-name">Emplead@</div>
@@ -20,7 +20,7 @@ export default function Home() {
             </div>
           </Link>
 
-          <Link to="/historial" className="role-link" aria-label="Técnico">
+          <Link to="/login/tecnico" className="role-link" aria-label="Técnico">
             <div className="role-card">
               <div className="role-icon">🛠️</div>
               <div className="role-name">Técnico</div>
@@ -28,7 +28,7 @@ export default function Home() {
             </div>
           </Link>
 
-          <Link to="/admin" className="role-link" aria-label="Administrador">
+          <Link to="/login/admin" className="role-link" aria-label="Administrador">
             <div className="role-card">
               <div className="role-icon">👔</div>
               <div className="role-name">Administrador</div>

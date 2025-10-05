@@ -2,7 +2,16 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import ReportFailure from "./pages/ReportFailure";
 import ReportsHistory from "./pages/ReportsHistory";
-import AdminDashboard from "./pages/AdminDashboard";
+import AdminLayout from "./pages/admin/AdminLayout";
+import DashboardHome from "./pages/admin/DashboardHome";
+import Inventory from "./pages/admin/Inventory";
+import Users from "./pages/admin/Users";
+import Reports from "./pages/admin/Reports";
+import Stats from "./pages/admin/Stats";
+import Orders from "./pages/admin/Orders";
+import LoginEmpleado from "./pages/auth/login/LoginEmpleado";
+import LoginTecnico from "./pages/auth/login/LoginTecnico";
+import LoginAdmin from "./pages/auth/login/LoginAdmin";
 import Navbar from "./components/Navbar";
 
 function App() {
@@ -11,9 +20,19 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/login/empleado" element={<LoginEmpleado />} />
+        <Route path="/login/tecnico" element={<LoginTecnico />} />
+        <Route path="/login/admin" element={<LoginAdmin />} />
         <Route path="/reportar" element={<ReportFailure />} />
         <Route path="/historial" element={<ReportsHistory />} />
-        <Route path="/admin" element={<AdminDashboard />} />
+        <Route path="/admin" element={<AdminLayout />}>
+          <Route index element={<DashboardHome />} />
+          <Route path="inventario" element={<Inventory />} />
+          <Route path="usuarios" element={<Users />} />
+          <Route path="reportes" element={<Reports />} />
+          <Route path="estadisticas" element={<Stats />} />
+          <Route path="ordenes" element={<Orders />} />
+        </Route>
       </Routes>
     </Router>
   );
