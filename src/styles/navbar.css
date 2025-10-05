@@ -4,6 +4,7 @@
   color: white;
   padding: 1rem;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  position: relative;
 }
 
 .navbar-container {
@@ -12,17 +13,67 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
 }
 
 .navbar-logo {
   font-size: 1.25rem;
   font-weight: bold;
   color: white;
+  z-index: 1001;
+}
+
+.navbar-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  z-index: 1001;
+}
+
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  width: 25px;
+  height: 20px;
+  position: relative;
+}
+
+.hamburger span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background-color: white;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+  transform-origin: center;
+}
+
+.hamburger span:nth-child(1) {
+  margin-bottom: 5px;
+}
+
+.hamburger span:nth-child(2) {
+  margin-bottom: 5px;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
 }
 
 .navbar-links {
   display: flex;
   gap: 1rem;
+  transition: all 0.3s ease;
 }
 
 .navbar-link {
@@ -42,4 +93,62 @@
 .navbar-link.active {
   background-color: #2563eb; /* azul */
   color: white;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .navbar-toggle {
+    display: block;
+  }
+
+  .navbar-links {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #1f2937;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    transform: translateX(-100%);
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1000;
+  }
+
+  .navbar-links.active {
+    transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .navbar-link {
+    font-size: 1.2rem;
+    padding: 1rem 2rem;
+    width: 80%;
+    text-align: center;
+    border-radius: 10px;
+  }
+
+  .navbar-link:hover {
+    background-color: #374151;
+    transform: scale(1.05);
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 0.75rem;
+  }
+
+  .navbar-logo img {
+    height: 40px !important;
+  }
+
+  .navbar-link {
+    font-size: 1.1rem;
+    padding: 0.8rem 1.5rem;
+  }
 }
