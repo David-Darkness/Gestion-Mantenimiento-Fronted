@@ -4,7 +4,7 @@ export default function LoginTecnico() {
   return (
     <LoginForm 
       role="tecnico"
-      redirectPath="/historial"
+      redirectPath="/tecnico"
       roleName="Técnico"
     />
   );

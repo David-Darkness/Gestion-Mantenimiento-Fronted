@@ -39,7 +39,7 @@ export default function LoginForm({ role, redirectPath, roleName }) {
             {role === "tecnico" && "🛠️"}
             {role === "admin" && "👔"}
           </div>
-          <h1 className="login-title">Iniciar Sesión</h1>
+          <h1 className="login-title">Iniciar sesión</h1>
           <p className="login-subtitle">{roleName}</p>
         </div>
 

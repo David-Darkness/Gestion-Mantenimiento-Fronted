@@ -12,6 +12,11 @@ import Orders from "./pages/admin/Orders";
 import LoginEmpleado from "./pages/auth/login/LoginEmpleado";
 import LoginTecnico from "./pages/auth/login/LoginTecnico";
 import LoginAdmin from "./pages/auth/login/LoginAdmin";
+import TechnicianLayout from "./pages/technician/TechnicianLayout";
+import AssignedReports from "./pages/technician/AssignedReports";
+import InterventionHistory from "./pages/technician/InterventionHistory";
+import EquipmentSheets from "./pages/technician/EquipmentSheets";
+import EquipmentLife from "./pages/technician/EquipmentLife";
 import Navbar from "./components/Navbar";
 
 function App() {
@@ -32,6 +37,12 @@ function App() {
           <Route path="reportes" element={<Reports />} />
           <Route path="estadisticas" element={<Stats />} />
           <Route path="ordenes" element={<Orders />} />
+        </Route>
+        <Route path="/tecnico" element={<TechnicianLayout />}>
+          <Route index element={<AssignedReports />} />
+          <Route path="historial" element={<InterventionHistory />} />
+          <Route path="fichas" element={<EquipmentSheets />} />
+          <Route path="hojadevida" element={<EquipmentLife />} />
         </Route>
       </Routes>
     </Router>

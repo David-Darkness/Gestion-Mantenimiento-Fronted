@@ -1,0 +1,7 @@
+/* Reutiliza la misma base de admin para accesibilidad y responsive */
+@import './admin.css';
+
+/* Personalizaciones mínimas para el módulo técnico si se requieren */
+.tech .brand { opacity: .95; }
+
+
