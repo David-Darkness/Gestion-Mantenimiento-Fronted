@@ -28,7 +28,6 @@ function App() {
         <Route path="/login/tecnico" element={<LoginTecnico />} />
         <Route path="/login/admin" element={<LoginAdmin />} />
         <Route path="/reportar" element={<ReportFailure />} />
-        <Route path="/historial" element={<ReportsHistory />} />
         <Route path="/admin" element={<AdminLayout />}>
           <Route index element={<DashboardHome />} />
           <Route path="inventario" element={<Inventory />} />
