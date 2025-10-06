@@ -112,15 +112,28 @@
 
 .sidebar-close {
   position: absolute;
-  top: 10px;
-  right: 10px;
-  width: 32px;
-  height: 32px;
-  border-radius: 6px;
+  top: 8px;
+  right: 8px;
+  width: 44px;            /* objetivo táctil accesible */
+  height: 44px;           /* objetivo táctil accesible */
+  border-radius: 10px;
   border: 1px solid var(--color-border);
-  background: transparent;
+  background: rgba(0, 0, 0, 0.35);
   color: var(--color-text);
+  font-size: 22px;
+  line-height: 1;
+  z-index: 1000;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
   display: none;
+}
+
+.sidebar-close:hover {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.sidebar-close:active {
+  transform: scale(0.98);
 }
 
 .sidebar-overlay {
