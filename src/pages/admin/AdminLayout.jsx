@@ -6,6 +6,7 @@ export default function AdminLayout() {
   const location = useLocation();
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+  const [isCollapsed, setIsCollapsed] = useState(false); // desktop collapse
 
   const isActive = (path) => (location.pathname.startsWith(path) ? "active" : "");
 
@@ -31,20 +32,31 @@ export default function AdminLayout() {
   }, []);
 
   return (
-    <div className="admin">
+    <div className={`admin ${!isMobile && isCollapsed ? 'collapsed' : ''}`}>
       <header className="admin-topbar">
         <div className="topbar-left">
-          {isMobile && (
+          {isMobile ? (
             <button 
               className="sidebar-toggle"
               onClick={toggleSidebar}
-              aria-label="Toggle sidebar"
+              aria-label="Mostrar/ocultar panel"
+              aria-expanded={isSidebarOpen}
             >
               <span className={`hamburger ${isSidebarOpen ? 'active' : ''}`}>
                 <span></span>
                 <span></span>
                 <span></span>
               </span>
+            </button>
+          ) : (
+            <button
+              className="collapse-toggle"
+              onClick={() => setIsCollapsed(!isCollapsed)}
+              aria-label="Colapsar/expandir panel"
+              aria-expanded={!isCollapsed}
+              title={isCollapsed ? 'Expandir panel' : 'Colapsar panel'}
+            >
+              {isCollapsed ? '»' : '«'}
             </button>
           )}
           <div className="brand">Sistema de Mantenimiento</div>
@@ -58,28 +70,38 @@ export default function AdminLayout() {
       )}
 
       <aside className={`admin-sidebar ${isSidebarOpen ? 'active' : ''}`}>
+        {/* Close button visible only on mobile */}
+        {isMobile && (
+          <button
+            className="sidebar-close"
+            aria-label="Cerrar panel"
+            onClick={closeSidebar}
+          >
+            ×
+          </button>
+        )}
         <div className="side-title">Panel</div>
         <nav className="menu">
           <Link to="/admin" className={isActive("/admin")} onClick={closeSidebar}>
-            <span className="icon">🏠</span> Inicio
+            <span className="icon">🏠</span><span className="label">Inicio</span>
           </Link>
           <Link to="/admin/inventario" className={isActive("/admin/inventario")} onClick={closeSidebar}>
-            <span className="icon">📦</span> Gestión de inventario
+            <span className="icon">📦</span><span className="label">Gestión de inventario</span>
           </Link>
           <Link to="/admin/usuarios" className={isActive("/admin/usuarios")} onClick={closeSidebar}>
-            <span className="icon">👥</span> Gestión de usuarios y roles
+            <span className="icon">👥</span><span className="label">Gestión de usuarios y roles</span>
           </Link>
           <Link to="/admin/reportes" className={isActive("/admin/reportes")} onClick={closeSidebar}>
-            <span className="icon">🧾</span> Gestión de reportes
+            <span className="icon">🧾</span><span className="label">Gestión de reportes</span>
           </Link>
           <Link to="/admin/estadisticas" className={isActive("/admin/estadisticas")} onClick={closeSidebar}>
-            <span className="icon">📊</span> Estadísticas y métricas
+            <span className="icon">📊</span><span className="label">Estadísticas y métricas</span>
           </Link>
           <Link to="/admin/ordenes" className={isActive("/admin/ordenes")} onClick={closeSidebar}>
-            <span className="icon">📝</span> Gestión de órdenes
+            <span className="icon">📝</span><span className="label">Gestión de órdenes</span>
           </Link>
           <Link to="/" className="" onClick={closeSidebar}>
-            <span className="icon">🚪</span> Salir
+            <span className="icon">🚪</span><span className="label">Salir</span>
           </Link>
         </nav>
       </aside>
