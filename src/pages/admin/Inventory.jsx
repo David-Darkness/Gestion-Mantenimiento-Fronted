@@ -25,11 +25,117 @@ export default function Inventory() {
               <td>56</td>
               <td>10</td>
             </tr>
+            <tr>
+              <td>LT7721</td>
+              <td>Laptop</td>
+              <td>34</td>
+              <td>8</td>
+            </tr>
+            <tr>
+              <td>PR4502</td>
+              <td>Impresora</td>
+              <td>12</td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td>SW9831</td>
+              <td>Switch</td>
+              <td>18</td>
+              <td>4</td>
+            </tr>
+            <tr>
+              <td>RT8840</td>
+              <td>Router</td>
+              <td>27</td>
+              <td>6</td>
+            </tr>
+            <tr>
+              <td>SR1109</td>
+              <td>Servidor</td>
+              <td>5</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td>MN2307</td>
+              <td>Monitor</td>
+              <td>43</td>
+              <td>7</td>
+            </tr>
+            <tr>
+              <td>KB7742</td>
+              <td>Teclado</td>
+              <td>120</td>
+              <td>15</td>
+            </tr>
+            <tr>
+              <td>MS5590</td>
+              <td>Mouse</td>
+              <td>132</td>
+              <td>20</td>
+            </tr>
+            <tr>
+              <td>HD8821</td>
+              <td>Disco Duro Externo</td>
+              <td>41</td>
+              <td>5</td>
+            </tr>
+            <tr>
+              <td>USB9301</td>
+              <td>USB</td>
+              <td>200</td>
+              <td>25</td>
+            </tr>
+            <tr>
+              <td>PRJ7602</td>
+              <td>Proyector</td>
+              <td>9</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td>HP9910</td>
+              <td>Headset</td>
+              <td>65</td>
+              <td>10</td>
+            </tr>
+            <tr>
+              <td>SP3501</td>
+              <td>Altavoces</td>
+              <td>28</td>
+              <td>5</td>
+            </tr>
+            <tr>
+              <td>TB4450</td>
+              <td>Tablet</td>
+              <td>19</td>
+              <td>4</td>
+            </tr>
+            <tr>
+              <td>CM1234</td>
+              <td>Cámara Web</td>
+              <td>37</td>
+              <td>6</td>
+            </tr>
+            <tr>
+              <td>AP5009</td>
+              <td>Access Point</td>
+              <td>15</td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td>SC7101</td>
+              <td>Silla Ergonómica</td>
+              <td>25</td>
+              <td>5</td>
+            </tr>
+            <tr>
+              <td>UP9002</td>
+              <td>UPS</td>
+              <td>11</td>
+              <td>2</td>
+            </tr>
           </tbody>
         </table>
       </section>
     </div>
   );
 }
-
-
