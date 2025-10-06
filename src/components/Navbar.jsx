@@ -15,16 +15,14 @@ export default function Navbar() {
     setIsMenuOpen(false);
   };
 
+  // no theme switching
+
   return (
     <nav className="navbar">
       <div className="navbar-container">
-        <div className="navbar-logo" style={{ display: "flex", alignItems: "center" }}>
-          <img
-            src={logoTechSolutions}
-            alt="TechSolutions"
-            style={{ height: 50 }}
-          />
-        </div>
+        <Link to="/" onClick={closeMenu} className="navbar-logo" style={{ display: "flex", alignItems: "center" }}>
+          <img src={logoTechSolutions} alt="TechSolutions" style={{ height: 50 }} />
+        </Link>
         
         {/* Mobile menu button */}
         <button 
@@ -42,32 +40,27 @@ export default function Navbar() {
         {/* Navigation links */}
         <div className={`navbar-links ${isMenuOpen ? 'active' : ''}`}>
           <Link
-            to="/"
-            className={`navbar-link ${
-              location.pathname === "/" ? "active" : ""
-            }`}
+            to="/login/empleado"
+            className={`navbar-link ${location.pathname.startsWith("/login/empleado") ? "active" : ""}`}
             onClick={closeMenu}
           >
-            Inicio
+            Empleado
           </Link>
           <Link
-            to="/reportar"
-            className={`navbar-link ${
-              location.pathname === "/reportar" ? "active" : ""
-            }`}
+            to="/login/tecnico"
+            className={`navbar-link ${location.pathname.startsWith("/login/tecnico") ? "active" : ""}`}
             onClick={closeMenu}
           >
-            Reportar
+            Técnico
           </Link>
           <Link
-            to="/historial"
-            className={`navbar-link ${
-              location.pathname === "/historial" ? "active" : ""
-            }`}
+            to="/login/admin"
+            className={`navbar-link ${location.pathname.startsWith("/login/admin") ? "active" : ""}`}
             onClick={closeMenu}
           >
-            Historial
+            Administrador
           </Link>
+          {/* theme toggle removed */}
         </div>
       </div>
     </nav>

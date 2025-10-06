@@ -2,8 +2,8 @@
 
 .admin {
   min-height: 100vh;
-  background: #0f1115;
-  color: #e7e7e7;
+  background: var(--color-bg);
+  color: var(--color-text);
   display: grid;
   grid-template-columns: 260px 1fr;
   grid-template-rows: 64px 1fr;
@@ -18,8 +18,8 @@
   align-items: center;
   justify-content: space-between;
   padding: 0 20px;
-  background: linear-gradient(180deg, #141720, #10131a);
-  border-bottom: 1px solid #1e2230;
+  background: linear-gradient(180deg, #111827, #0f172a);
+  border-bottom: 1px solid var(--color-border);
 }
 
 .topbar-left {
@@ -85,8 +85,8 @@
 
 .admin-sidebar {
   grid-area: sidebar;
-  background: linear-gradient(180deg, #0b0d12, #0c0f15);
-  border-right: 1px solid #1e2230;
+  background: linear-gradient(180deg, #0b0f14, #0c1320);
+  border-right: 1px solid var(--color-border);
   padding: 16px 10px;
   transition: transform 0.3s ease;
 }
@@ -107,11 +107,11 @@
 .menu { display: flex; flex-direction: column; gap: 6px; margin-top: 8px; }
 .menu a {
   display: flex; align-items: center; gap: 10px;
-  color: #d8d8d8; text-decoration: none; padding: 10px 12px; border-radius: 10px;
+  color: var(--color-text); text-decoration: none; padding: 10px 12px; border-radius: 10px;
   transition: all 0.3s ease;
 }
-.menu a:hover { background: #1a1f2d; transform: translateX(5px); }
-.menu a.active { background: #1a2436; color: #cfe1ff; }
+.menu a:hover { background: var(--color-hover); transform: translateX(5px); }
+.menu a.active { background: var(--color-active); color: var(--color-text); }
 .menu .icon { width: 20px; text-align: center; opacity: .85; }
 
 .admin-content {
@@ -124,16 +124,16 @@
 .section-title { font-size: 26px; font-weight: 600; margin: 8px 0 16px; opacity: .95; }
 
 .card {
-  background: radial-gradient(1200px 400px at -10% -100%, #192034 0, transparent 40%), #0f1219;
-  border: 1px solid #232a3b;
+  background: radial-gradient(1200px 400px at -10% -100%, #17233a 0, transparent 40%), #0f172a;
+  border: 1px solid var(--color-border);
   border-radius: 12px;
   padding: 18px;
 }
 
 .table { width: 100%; border-collapse: collapse; }
-.table th, .table td { padding: 12px 10px; border-bottom: 1px solid #222a3a; text-align: left; }
-.table th { color: #aebad1; font-weight: 600; font-size: 13px; }
-.table tr:hover td { background: #141a27; }
+.table th, .table td { padding: 12px 10px; border-bottom: 1px solid var(--color-border); text-align: left; }
+.table th { color: var(--color-text-muted); font-weight: 700; font-size: 13px; }
+.table tr:hover td { background: #0f1b2d; }
 
 .muted { opacity: .8; }
 
