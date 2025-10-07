@@ -16,12 +16,12 @@ import AssignedReports from "./pages/technician/AssignedReports";
 import InterventionHistory from "./pages/technician/InterventionHistory";
 import EquipmentSheets from "./pages/technician/EquipmentSheets";
 import EquipmentLife from "./pages/technician/EquipmentLife";
-import Navbar from "./components/Navbar";
+/* import Navbar from "./components/Navbar"; */
 
 function App() {
   return (
     <Router>
-      <Navbar />
+      
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login/empleado" element={<LoginEmpleado />} />
