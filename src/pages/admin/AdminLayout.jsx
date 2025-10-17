@@ -1,6 +1,7 @@
 import { Link, Outlet, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 import "../../styles/admin.css";
+import logoTechSolutions from "../../assets/Logo TechSolutions.png";
 
 export default function AdminLayout() {
   const location = useLocation();
@@ -80,6 +81,9 @@ export default function AdminLayout() {
             ×
           </button>
         )}
+        <div className="sidebar-logo">
+          <img src={logoTechSolutions} alt="TechSolutions" />
+        </div>
         <div className="side-title">Panel</div>
         <nav className="menu">
           <Link to="/admin" className={isActive("/admin")} onClick={closeSidebar}>

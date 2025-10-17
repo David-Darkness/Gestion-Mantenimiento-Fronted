@@ -1,6 +1,7 @@
 import { Link, Outlet, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import "../../styles/technician.css";
+import logoTechSolutions from "../../assets/Logo TechSolutions.png";
 
 export default function TechnicianLayout() {
   const location = useLocation();
@@ -64,6 +65,9 @@ export default function TechnicianLayout() {
         {isMobile && (
           <button className="sidebar-close" aria-label="Cerrar panel" onClick={closeSidebar}>×</button>
         )}
+        <div className="sidebar-logo">
+          <img src={logoTechSolutions} alt="TechSolutions" />
+        </div>
         <div className="side-title">Panel</div>
         <nav className="menu">
           <Link to="/tecnico" className={isActive("/tecnico")} onClick={closeSidebar}>
