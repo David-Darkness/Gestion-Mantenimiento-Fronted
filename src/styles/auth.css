@@ -35,9 +35,20 @@
 }
 
 .role-icon {
-  font-size: 48px;
-  margin-bottom: 16px;
-  display: block;
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 16px auto;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: rgba(102, 126, 234, 0.14);
+  color: #5a6fcf;
+  border: 1px solid rgba(90, 111, 207, 0.4);
+}
+
+.role-icon svg {
+  width: 46px;
+  height: 46px;
 }
 
 .login-title {
@@ -171,6 +182,12 @@
   }
   
   .role-icon {
-    font-size: 40px;
+    width: 68px;
+    height: 68px;
+  }
+
+  .role-icon svg {
+    width: 38px;
+    height: 38px;
   }
 }

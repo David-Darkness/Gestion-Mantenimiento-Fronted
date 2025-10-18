@@ -76,7 +76,12 @@
   border-radius: 50%;
   background: #2f80ed22;
   color: #bcd4ff;
-  font-size: 40px;
+  border: 1px solid #3a5c91;
+}
+
+.role-icon svg {
+  width: 42px;
+  height: 42px;
 }
 
 .role-name {
