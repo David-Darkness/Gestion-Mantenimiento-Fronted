@@ -172,7 +172,18 @@
 }
 .menu a:hover { background: var(--color-hover); transform: translateX(5px); }
 .menu a.active { background: var(--color-active); color: var(--color-text); }
-.menu .icon { width: 20px; text-align: center; opacity: .85; }
+.menu .icon {
+  width: 26px;
+  height: 26px;
+  display: grid;
+  place-items: center;
+  opacity: 0.85;
+}
+
+.menu .icon svg {
+  width: 18px;
+  height: 18px;
+}
 .menu .label { white-space: nowrap; }
 
 .admin-content {
